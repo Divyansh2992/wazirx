@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tickers Data</title>
+  <style>
+    body {
+      background-color: #212529;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 36px;
+      margin-top: 20px;
+    }
+    table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #444;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
+    }
+    th {
+      background-color: #343a40;
+    }
+    tr:nth-child(even) {
+      background-color: #282c34;
+    }
+    tr:nth-child(odd) {
+      background-color: #212529;
+    }
+    tr:hover {
+      background-color: #495057;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tickers Data</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Last</th>
+        <th>Buy</th>
+        <th>Sell</th>
+        <th>Volume</th>
+        <th>Base Unit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tickers.forEach((ticker, index) => { %>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= ticker.name %></td>
+          <td><%= ticker.last %></td>
+          <td><%= ticker.buy %></td>
+          <td><%= ticker.sell %></td>
+          <td><%= ticker.volume %></td>
+          <td><%= ticker.base_unit %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</body>
+</html>
