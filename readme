@@ -1,0 +1,67 @@
+This project fetches data from the WazirX API, stores it in a MySQL database, and displays it on a web page using Express.js and EJS templating.
+
+Table of Contents
+1.Introduction
+2.Features
+3.Setup Instructions
+4.Usage
+5.Contributing
+
+1.Introduction
+This project is aimed at fetching real-time cryptocurrency trading data from the WazirX API, storing this data in a MySQL database, and providing a web interface to display the latest data as well as all stored data.
+
+2.Features
+Fetches top 10 trading pairs data from the WazirX API.
+Stores fetched data (name, last price, buy price, sell price, volume, base unit) in a MySQL database.
+Provides routes to display newly added data and all stored data.
+Uses EJS templates for rendering data on the front-end.
+
+3.Setup Instructions
+To run this project locally, follow these steps:
+
+Clone the repository:
+
+bash
+Copy code
+git clone https://github.com/yourusername/wazirx-data-fetch.git
+cd wazirx-data-fetch
+Install dependencies:
+
+Ensure Node.js and npm are installed. Then, install dependencies using npm:
+
+bash
+Copy code
+npm install
+Set up MySQL database:
+
+Create a MySQL database named wazirx.
+
+Update the MySQL connection details in index.js file:
+
+javascript
+Copy code
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'your_mysql_password',
+  database: 'wazirx'
+});
+Run the application:
+
+Start the Express server:
+
+bash
+Copy code
+node index.js
+The server will start at http://localhost:3000.
+
+
+
+4.Usage
+Navigate to http://localhost:3000/ to fetch data from the WazirX API, store it in the database, and automatically redirect to the display page.
+Visit http://localhost:3000/newlyadded to see the latest 10 entries added to the database.
+Go to http://localhost:3000/displaydata to view all data stored in the database.
+
+
+5.Contributing
+Contributions are welcome! Please feel free to fork the repository and submit pull requests for any features or fixes you think are beneficial.
